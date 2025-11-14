@@ -1,8 +1,10 @@
+import { useSong } from "../store"
+
 interface Props {
     song: {
         _id: string
         title: string
-        albun: string
+        album: string
         author: string
         audio: {
             url: string
@@ -25,9 +27,15 @@ export default function (
     { song }: Props
 ) {
 
+const {updateSong} =useSong ()
+
+
 function handlerclik(){
-    
+  
+    updateSong (song)
 }
+
+
 
 
 
