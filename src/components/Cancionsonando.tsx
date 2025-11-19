@@ -33,7 +33,7 @@ export default function () {
 
         <div>
 
-            <img src="" alt="" />
+            <img src={song?.image.url} alt="" />
             <div className="tex-center">
                 <h2 className="tex-4x1 font-bold" > {song?.title}</h2>
                 <p className="opacity-50">{song?.album}</p>

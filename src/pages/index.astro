@@ -12,15 +12,33 @@ const songs = (await axios.get("https://api.institutoalfa.org/api/songs")).data
 ---
 
 <Layout>
-	<section>
-		{
-			songs.map(function (song: any) {
-				return <Tarjetamusical song={song} client:visible />;
-			})
-		}
-	</section>
+	<div class="container">
+		<section class="lista">
+			{
+				songs.map(function (song: any) {
+					return <Tarjetamusical song={song} client:visible />;
+				})
+			}
+		</section>
+	
+		<section>
+			<Cancionsonando client:visible />
+		</section>
 
-	<section>
-		<Cancionsonando client:visible />
-	</section>
+	</div>
 </Layout>
+
+<style>
+	.container {
+		display: flex;
+	
+	}
+	.lista{
+		gap: 24px;
+		display: flex;
+		flex-direction: column;
+		padding: 8px 24px;
+	}
+</style>
+
+

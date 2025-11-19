@@ -23,8 +23,8 @@ function handlerclik(){
 
 
     return (
-        <div className="flex items-center" onClick={handlerclik} >
-            <img className ="w-16 reunded-full"src={song.image.url} alt="" />
+        <div className="flex items-center gap-2" onClick={handlerclik} >
+            <img className ="w-16 rounded-full"src={song.image.url} alt="" />
             <div>
                 <h3>{song.title}</h3>
                 <p>{song.author}</p>
