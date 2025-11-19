@@ -11,7 +11,7 @@ export default function () {
 
     function handlerPlay() {
         if (referenciaAudio.current) {
-            if (refenciaAudio.current.paused) {
+            if (referenciaAudio.current.paused) {
                 referenciaAudio.current.play()
 
             } else {
@@ -41,10 +41,11 @@ export default function () {
 
             </div>
 
+            <button onClick={handlerPlay}>Play</button>
+
             <audio src={song?.audio.url} autoPlay ref={referenciaAudio} />
 
         </div>
     )
 
 }
-<button></button>
