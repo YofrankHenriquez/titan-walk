@@ -11,12 +11,17 @@ export default function () {
 
     function handlerPlay() {
         if (referenciaAudio.current) {
-            referenciaAudio.current.play()
-        } else {
-            referenciaAudio.current?.pause()
+            if (refenciaAudio.current.paused) {
+                referenciaAudio.current.play()
+
+            } else {
+                referenciaAudio.current.pause()
+            }
+
+
         }
     }
-useEffect(function() {
+    useEffect(function () {
         const cancionguardada = localStorage.getItem('song')
 
         if (cancionguardada) {
@@ -24,21 +29,22 @@ useEffect(function() {
         }
     }, [])
 
-return (
-    
-    <div>
+    return (
 
-        <img src="" alt="" />
-        <div className="tex-center">
-            <h2 className="tex-4x1 font-bold" > {song?.title}</h2>
-            <p className="opacity-50">{song?.album}</p>
-            <p className="font-semibold opacity-80">{song?.author}</p>
+        <div>
+
+            <img src="" alt="" />
+            <div className="tex-center">
+                <h2 className="tex-4x1 font-bold" > {song?.title}</h2>
+                <p className="opacity-50">{song?.album}</p>
+                <p className="font-semibold opacity-80">{song?.author}</p>
+
+            </div>
+
+            <audio src={song?.audio.url} autoPlay ref={referenciaAudio} />
 
         </div>
-
-        <audio src={song?.audio.url}  autoPlay ref={referenciaAudio} />
-
-    </div>
-)
+    )
 
 }
+<button></button>
